@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+
+    <description>Webflow JSP Tag Library</description>
+    <tlib-version>1.0</tlib-version>
+    <short-name>webflow</short-name>
+    <uri>http://www.springframework.org/webflow/tags</uri>
+    
+    <tag>
+        <description>
+            Renders a flow navigation.
+        </description>
+        <name>navigation</name>
+        <tag-class>org.springframework.webflow.tags.FlowNavigationTag</tag-class>
+        <body-content>empty</body-content>
+        
+        <attribute>
+          <description>
+            Suppress navigation rendering for flows with less vew states than the configured value. 
+          </description>
+          <name>omitIfShorterThan</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        
+        <attribute>
+          <description>
+            Defines the key base to be used for internationalization lookups. The configured value 
+            will be prepended to the flow id and then i18n'd through a MessageSource if not 'caption'
+            attribute was defined for the view state. 
+          </description>
+          <name>titleKeyBase</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        
+        <attribute>
+          <description>
+            The bean name of the ViewStateRenderer to be used for rendering the ViewStates. If nothing 
+            is configured explicitly we will try to find a single ViewStateRenderer bean in the 
+            ApplicationContext or fall back to a DefaultViewStateRenderer. 
+          </description>
+          <name>renderer</name>
+          <required>false</required>
+          <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+</taglib>
